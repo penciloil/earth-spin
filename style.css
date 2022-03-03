@@ -1,5 +1,13 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 *, *::before, *::after {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 body {
@@ -9,7 +17,13 @@ body {
 
 .universe {
     height: 100vh;
+    background-image: -o-radial-gradient(#555, black);
     background-image: radial-gradient(#555, black);
+
+    display: -ms-grid;
+
+    display: grid;
+    place-items: center;
 }
 
 .stars {
@@ -19,7 +33,17 @@ body {
     background-size: cover;
     background-position: center;
 
-    animation: star-twinking 2s infinite alternate;
+    position: absolute;
+
+    -webkit-animation: star-twinking 2s infinite alternate;
+
+            animation: star-twinking 2s infinite alternate;
+}
+
+@-webkit-keyframes star-twinking {
+    100% {
+        opacity: 0.4;
+    }
 }
 
 @keyframes star-twinking {
@@ -32,19 +56,27 @@ body {
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    box-shadow: 0 0 30px #f5c91a;
+    -webkit-box-shadow: 0 0 30px #f5c91a;
+            box-shadow: 0 0 30px #f5c91a;
+    background-image: -o-radial-gradient(#f5c313, #ec7e08);
     background-image: radial-gradient(#f5c313, #ec7e08);
 
-    position: absolute;
-    left: calc(100vw / 2 - 200px / 2);
-    top: calc(100vh / 2 - 200px / 2);
+    -webkit-animation: sun-fire 2s infinite alternate;
 
-    animation: sun-fire 2s infinite alternate;
+            animation: sun-fire 2s infinite alternate; 
+}
+
+@-webkit-keyframes sun-fire {
+    100% {
+        -webkit-box-shadow: 0 0 100px #f5c91a;
+                box-shadow: 0 0 100px #f5c91a;
+    }
 }
 
 @keyframes sun-fire {
     100% {
-        box-shadow: 0 0 100px #f5c91a;
+        -webkit-box-shadow: 0 0 100px #f5c91a;
+                box-shadow: 0 0 100px #f5c91a;
     }
 }
 
@@ -53,18 +85,27 @@ body {
     height: 90vh;
     border-radius: 50%;
     /* border: 2px dashed gold; */
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
 
-    position: absolute;
-    left: calc(100vw / 2 - 90vh / 2);
-    top: calc(100vh / 2 - 90vh / 2);
+    -webkit-animation: spin 60s linear infinite;
 
-    animation: spin 60s linear infinite;
+            animation: spin 60s linear infinite;
 
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
 }
 
 @keyframes spin {
     100% {
-        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
     }
 }
 
@@ -77,11 +118,18 @@ body {
     position: absolute;
     top: calc(50% - 120px / 2);
     left: calc(-120px / 2);
+    display: -ms-grid;
     display: grid;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 
-    animation: spin 30s linear infinite;
+    -webkit-animation: spin 30s linear infinite;
+
+            animation: spin 30s linear infinite; 
 
 }
 
@@ -90,12 +138,22 @@ body {
     height: 90px;
     border-radius: 50%;
 
-    animation: donotspin 30s linear infinite;
+    -webkit-animation: donotspin 30s linear infinite;
+
+            animation: donotspin 30s linear infinite; 
+}
+
+@-webkit-keyframes donotspin {
+    100% {
+        -webkit-transform:rotate(-720deg) ;
+                transform:rotate(-720deg) ;
+    }
 }
 
 @keyframes donotspin {
     100% {
-        transform:rotate(-720deg) ;
+        -webkit-transform:rotate(-720deg) ;
+                transform:rotate(-720deg) ;
     }
 }
 
@@ -107,8 +165,6 @@ body {
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    background-image: -o-radial-gradient(#ddd, #888);
     background-image: radial-gradient(#ddd, #888);
-    
-    position: absolute;
-    left: calc(-30px / 2);
 }
