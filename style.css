@@ -29,7 +29,7 @@ body {
 .stars {
     height: 100vh;
     width: 100vw;
-    background-image: url(/images/stars.png);
+    background-image: url(images/stars.png);
     background-size: cover;
     background-position: center;
 
